@@ -14,6 +14,7 @@ export const Query = {
     }
   },
 
+  //mirar max y min y para eso darselo en schemas
   getCochePrecio: async (_: unknown, args: { min: number , max:number }): Promise<Coche[] | null> => {
     try {
       const coche = await Cochecollection.find({precio:{ $gt : args.min, $lt : args.max}});

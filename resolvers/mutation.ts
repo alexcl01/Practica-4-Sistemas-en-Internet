@@ -89,9 +89,9 @@ export const Mutation = {
               const vendedor = await VendedorCollection.findOne({Dni: args.Dni});
               const coche = await Cochecollection.findOne({plate: args.plate});
               if(!vendedor){
-                  throw new Error("no existe ese dni");
+                  throw new Error("no exite ese dni");
               }else if(!coche){
-                throw new Error("no existe esa matricula");
+                throw new Error("no exite esa matricula");
               }
                 
               vendedor.Coche.push(args.plate);
@@ -116,7 +116,7 @@ export const Mutation = {
                 const concesionario = await ConcesonarioCollection.findOne({direccion: args.direccion});
 
                 if(!vendedor){
-                  throw new Error("no existe ese dni");
+                  throw new Error("no exite ese dni");
                 }else if(!concesionario){
                   throw new Error("no existe esta direccion");
                 }
